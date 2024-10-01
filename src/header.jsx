@@ -1,18 +1,51 @@
-// index.jsx
-import * as React from 'react';
-import * as Popover from '@radix-ui/react-popover';
-import './assets/popover.css'
+import React from 'react';
+import * as Menubar from '@radix-ui/react-menubar';
 
-const PopoverDemo = () => (
-  <Popover.Root>
-    <Popover.Trigger className="PopoverTrigger">Show info</Popover.Trigger>
-    <Popover.Portal>
-      <Popover.Content className="PopoverContent">
-        Some content
-        <Popover.Arrow className="PopoverArrow" />
-      </Popover.Content>
-    </Popover.Portal>
-  </Popover.Root>
-);
+const Header = () => {
 
-export default PopoverDemo;
+  return (
+    <Menubar.Root className="w-full fixed top-0 left-0 flex bg-white p-[3px] rounded-md	justify-between z-10">
+      <div className='flex justify-between gap-10'>
+        <Menubar.Menu>
+          <Menubar.Trigger>
+            Menu
+          </Menubar.Trigger>
+        </Menubar.Menu>
+
+        <Menubar.Menu>
+          <Menubar.Trigger>
+            LOGO
+          </Menubar.Trigger>
+        </Menubar.Menu>
+      </div>
+
+      <div className='flex justify-between gap-6'>
+        <Menubar.Menu>
+          <Menubar.Trigger>
+            search
+          </Menubar.Trigger>
+        </Menubar.Menu>
+
+        <Menubar.Menu>
+          <Menubar.Trigger>
+            Notif
+          </Menubar.Trigger>
+        </Menubar.Menu>
+
+        <Menubar.Menu>
+          <Menubar.Trigger>
+            Help
+          </Menubar.Trigger>
+        </Menubar.Menu>
+
+        <Menubar.Menu>
+          <Menubar.Trigger>
+            Profiles
+          </Menubar.Trigger>
+        </Menubar.Menu>
+      </div>
+    </Menubar.Root>
+  );
+};
+
+export default Header;

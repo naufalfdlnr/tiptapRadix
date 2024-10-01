@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Tiptap from './Tiptap'
+import Tiptap from './tiptap'
+import Header from './header'
 import PopoverDemo from './popover'
+import Nav from './Nav'
+
 
 const App = () => {
   const [content, setContent] = useState('<p>Type your content here...</p>');
@@ -15,19 +18,24 @@ const App = () => {
 
   return (
     <>
-      <div className='font-thin'>HEADDDD</div>
-      <div>
-        <h1>Tiptap Form</h1>
-        <form onSubmit={handleSubmit}>
-          <Tiptap content={content} onUpdate={setFormData} />
-          <button type="submit">Submit</button>
-        </form>
-        <h2>Preview:</h2>
-        <div dangerouslySetInnerHTML={{ __html: formData }} />
+      <div className='flex flex-col gap-14'>
+        <div>
+          <Header />
+        </div>
+        <div className='flex flex-row gap-60'>
+          <div>
+            <Nav />
+          </div>
+          <div className='w-fit flex flex-col border p-2'>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
       </div>
-      {/* <div>
-        <PopoverDemo />
-      </div> */}
     </>
   )
 }
