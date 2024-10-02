@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Menubar from '@radix-ui/react-menubar';
+import { HamburgerMenuIcon, MagnifyingGlassIcon, BellIcon, CaretDownIcon } from '@radix-ui/react-icons'
 
 const Header = () => {
 
@@ -8,7 +9,7 @@ const Header = () => {
       <div className='flex justify-between gap-10'>
         <Menubar.Menu>
           <Menubar.Trigger>
-            Menu
+            <HamburgerMenuIcon />
           </Menubar.Trigger>
         </Menubar.Menu>
 
@@ -21,26 +22,32 @@ const Header = () => {
 
       <div className='flex justify-between gap-6'>
         <Menubar.Menu>
-          <Menubar.Trigger>
-            search
+          <div className='flex items-center border-orange-300 border rounded-md w-fit'>
+            <MagnifyingGlassIcon className='size-6 mx-1.5'/>
+              <input type="text" placeholder='Search or type a command' className='w-56 mr-2 outline-none'/>
+          </div>
+        </Menubar.Menu>
+
+        <Menubar.Menu>
+          <Menubar.Trigger className='border rounded-full'>
+            <BellIcon />
           </Menubar.Trigger>
         </Menubar.Menu>
 
         <Menubar.Menu>
-          <Menubar.Trigger>
-            Notif
+          <Menubar.Trigger className='flex items-center gap-2 px-2'>
+            <div>
+              Help
+            </div>
+            <div>
+              <CaretDownIcon />
+            </div>
           </Menubar.Trigger>
         </Menubar.Menu>
 
-        <Menubar.Menu>
-          <Menubar.Trigger>
-            Help
-          </Menubar.Trigger>
-        </Menubar.Menu>
-
-        <Menubar.Menu>
-          <Menubar.Trigger>
-            Profiles
+        <Menubar.Menu >
+          <Menubar.Trigger className='border rounded-full'>
+            P
           </Menubar.Trigger>
         </Menubar.Menu>
       </div>
