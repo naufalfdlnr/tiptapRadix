@@ -6,8 +6,8 @@ import Header from './header'
 import Nav from './navi'
 // import Post from './newPostElement'
 import NewPost from './newPost'
-import NewPostCheck from './newPostCheck'
-import NewPostDesc from './newPostDesc'
+// import NewPostCheck from './newPostCheck'
+// import NewPostDesc from './newPostDesc'
 
 
 const App = () => {
@@ -23,7 +23,8 @@ const App = () => {
             <Nav />
           </div>
           <div className='w-full flex flex-col border p-2 mx-4'>
-            <div className='flex flex-row gap-4'>
+            <NewPost/>
+            {/* <div className='flex flex-row gap-4'>
               <div>Logo</div>
               <div className='font-bold'>Post</div>
             </div>
@@ -97,7 +98,7 @@ const App = () => {
                   <NewPostDesc />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -58,7 +58,18 @@ const NewPost = () => {
       }),
       Highlight,
     ],
-    content: '',
+    content: `
+      <p> 
+        <p>Title</p>
+        <br/>
+        <p>Published URL</p>
+        <br/>
+        <p>Category</p>
+        <br/>
+        <p>Brand</p>
+        <br/>
+      </p>
+    `,
   });
 
   const handleContentClick = () => {
