@@ -1,19 +1,23 @@
-// src/Tiptap.tsx
-import { EditorProvider, FloatingMenu, BubbleMenu } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
+import './assets/tiptap.css'
 
-// define your extension array
-const extensions = [StarterKit]
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+import Youtube from '@tiptap/extension-youtube'
+import StarterKit from '@tiptap/starter-kit';
+import { EditorContent, useEditor } from '@tiptap/react'
+import React from 'react'
 
-const content = '<p>Hello World!</p>'
+export default ({ content, onUpdate }) => {
+  const editor = useEditor({
+    extensions: [StarterKit],
+    content: content,
+    onUpdate: ({ editor }) => {
+      onUpdate(editor.getHTML());
+    },
+  });
 
-const Tiptap = () => {
   return (
-    <EditorProvider extensions={extensions} content={content}>
-      <FloatingMenu editor={null}>This is the floating menu</FloatingMenu>
-      <BubbleMenu editor={null}>This is the bubble menu</BubbleMenu>
-    </EditorProvider>
-  )
-}
-
-export default Tiptap
+    <EditorContent editor={editor} />
+  );
+};

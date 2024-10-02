@@ -1,7 +1,7 @@
 // index.jsx
 import * as React from 'react';
 import * as Popover from '@radix-ui/react-popover';
-import './styles.css';
+import './assets/popover.css'
 
 const PopoverDemo = () => (
   <Popover.Root>
